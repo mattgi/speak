@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "skipDefaultLibCheck": true,
+    "lib": ["es2017", "esnext.asynciterable"],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["bin", "node_modules"]
+}

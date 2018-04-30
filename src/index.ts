@@ -1,7 +1,10 @@
-const { Nba } = require("./Services");
+import { Speech } from "./Services";
 
-// const speech = new Speech();
-// speech.convertTextToAudio("Hello world");
-
-const nba = new Nba();
-nba.getEvents();
+const speech = new Speech();
+speech.convertTextToAudio(`
+  <speak>
+  What's up everybody?!
+  <break time="900ms" />
+  We need to build.
+  </speak>
+`);

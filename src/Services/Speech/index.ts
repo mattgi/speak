@@ -16,23 +16,19 @@ export class Speech {
     });
   }
 
-  async convertTextToAudio(text: string, gender: Gender = Gender.Male) {
+  async convertTextToAudio(ssml: string, gender: Gender = Gender.Male) {
     const request = {
-      input: { text },
+      input: { ssml },
       voice: { languageCode: "en-AU", name: "en-AU-Standard-B" },
       audioConfig: {
         audioEncoding: "MP3",
-        pitch: 0.8,
-        speakingRate: 1.1
+        pitch: 1.7,
+        speakingRate: 1.15
       }
     };
     const response = await this.synthesizeSpeech(request);
     const outputFilename = `.data/audio/${moment().unix()}.mp3`;
-    const written = await writeFile(
-      outputFilename,
-      response.audioContent,
-      "binary"
-    );
+    const written = await writeFile(outputFilename, response.audioContent, "binary");
     console.log(`saved audio to ${outputFilename}.`);
   }
 
